@@ -1,10 +1,13 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
+import 'package:flutter/rendering.dart';
+
 import './transaction.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
+import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter App',
+      title: 'Expenses',
       home: MyHomePage(),
     );
   }
@@ -46,9 +49,9 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: NordColors.$10,
         title: const Text('Expenses'),
       ),
+      // TODO: Fix bottom overflowing
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           const SizedBox(
             width: double.infinity,
@@ -56,6 +59,27 @@ class MyHomePage extends StatelessWidget {
               color: NordColors.$10,
               child: Text('Chart'),
               elevation: 5,
+            ),
+          ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                children: <Widget>[
+                  const TextField(
+                    decoration: InputDecoration(labelText: 'Purchase'),
+                  ),
+                  const TextField(
+                      decoration: InputDecoration(labelText: 'Price')),
+                  TextButton(
+                    child: Text('Add transaction'),
+                    onPressed: () {},
+                    style:
+                        TextButton.styleFrom(primary: NordColors.aurora.purple),
+                  )
+                ],
+              ),
             ),
           ),
           Column(
@@ -75,7 +99,7 @@ class MyHomePage extends StatelessWidget {
                         width: 3,
                       )),
                       child: Text(
-                        tx.amount.toString(),
+                        '${tx.amount}€',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.italic,
@@ -89,11 +113,11 @@ class MyHomePage extends StatelessWidget {
                         children: <Widget>[
                           Text(
                             tx.title,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 16.5, fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            tx.date.toString(),
+                            DateFormat('EEEE d. MMMM y').format(tx.date),
                             style:
                                 TextStyle(color: NordColors.polarNight.darker),
                           )
