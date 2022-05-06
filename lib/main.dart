@@ -4,7 +4,6 @@ Copyright (c) 2022 Iiro Polso */
 import './transaction.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 void main() => runApp(MyApp());
@@ -41,12 +40,11 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: NordColors.$0,
       appBar: AppBar(
         backgroundColor: NordColors.$10,
-        title: const Text('Flutter App'),
+        title: const Text('Expenses'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -67,11 +65,10 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-
-                      padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 10),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 10, horizontal: 10),
                       decoration: BoxDecoration(
                           border: Border.all(
                         color: NordColors.$4,
@@ -87,10 +84,20 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Column(children: <Widget>[
-                      Text(tx.title),
-                      Text(tx.date.toString())
-                    ])
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            tx.title,
+                            style: TextStyle(
+                                fontSize: 16.5, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            tx.date.toString(),
+                            style:
+                                TextStyle(color: NordColors.polarNight.darker),
+                          )
+                        ])
                   ],
                 ),
               );

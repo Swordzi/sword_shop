@@ -1,8 +1,6 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
-
-
 class Transaction {
   final String id;
   final String title;
