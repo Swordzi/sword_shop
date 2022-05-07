@@ -2,6 +2,7 @@
 Copyright (c) 2022 Iiro Polso */
 
 import 'widgets/transaction_list.dart';
+import 'widgets/new_transaction.dart';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -49,41 +50,8 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            color: NordColors.snowStorm.lightest,
-            elevation: 5,
-            child: Container(
-              padding: const EdgeInsets.all(8),
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    decoration: const InputDecoration(labelText: 'Purchase'),
-                    controller: titleController,
-                    //onChanged: (val) => purchaseInput = val,
-                  ),
-                  TextField(
-                    decoration: const InputDecoration(labelText: 'Price'),
-                    controller: amountController,
-                    //onChanged: (val) => amountInput = val,
-                  ),
-                  TextButton(
-                    child: const Text('Add transaction'),
-                    onPressed: () {
-                      if (kDebugMode) {
-                        print(titleController.text);
-                      }
-                      if (kDebugMode) {
-                        print(amountController.text);
-                      }
-                    },
-                    style:
-                        TextButton.styleFrom(primary: NordColors.aurora.purple),
-                  )
-                ],
-              ),
-            ),
-          ),
-          TransactionList(),
+          NewTransaction(),
+          const TransactionList(),
         ],
       ),
     );
