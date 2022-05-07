@@ -1,7 +1,7 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
-import 'package:flutter/rendering.dart';
+import 'package:flutter/foundation.dart';
 
 import './transaction.dart';
 
@@ -9,10 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 import 'package:intl/intl.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,11 @@ class MyHomePage extends StatelessWidget {
       date: DateTime.now(),
     )
   ];
+
+  //late String purchaseInput;
+  //late String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   MyHomePage({Key? key}) : super(key: key);
 
@@ -67,14 +72,26 @@ class MyHomePage extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: Column(
                 children: <Widget>[
-                  const TextField(
-                    decoration: InputDecoration(labelText: 'Purchase'),
+                  TextField(
+                    decoration: const InputDecoration(labelText: 'Purchase'),
+                    controller: titleController,
+                    //onChanged: (val) => purchaseInput = val,
                   ),
-                  const TextField(
-                      decoration: InputDecoration(labelText: 'Price')),
+                  TextField(
+                    decoration: const InputDecoration(labelText: 'Price'),
+                    controller: amountController,
+                    //onChanged: (val) => amountInput = val,
+                  ),
                   TextButton(
-                    child: Text('Add transaction'),
-                    onPressed: () {},
+                    child: const Text('Add transaction'),
+                    onPressed: () {
+                      if (kDebugMode) {
+                        print(titleController.text);
+                      }
+                      if (kDebugMode) {
+                        print(amountController.text);
+                      }
+                    },
                     style:
                         TextButton.styleFrom(primary: NordColors.aurora.purple),
                   )
