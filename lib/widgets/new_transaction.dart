@@ -6,10 +6,12 @@ import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 import 'package:flutter/foundation.dart';
 
 class NewTransaction extends StatelessWidget {
-  final nameController = TextEditingController();
-  final priceController = TextEditingController();
-  
-  NewTransaction({Key? key}) : super(key: key);
+  final Function addTx;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
+  NewTransaction(this.addTx, {Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,27 +24,23 @@ class NewTransaction extends StatelessWidget {
           children: <Widget>[
             TextField(
               decoration: const InputDecoration(labelText: 'Purchase'),
-              controller: nameController,
+              controller: titleController,
               //onChanged: (val) => purchaseInput = val,
             ),
             TextField(
               decoration: const InputDecoration(labelText: 'Price'),
-              controller: priceController,
+              controller: amountController,
               //onChanged: (val) => amountInput = val,
             ),
             TextButton(
               child: const Text('Add transaction'),
               onPressed: () {
-                if (kDebugMode) {
-                  print(nameController.text);
-                }
-                if (kDebugMode) {
-                  print(priceController.text);
-                }
+                addTx(
+                  titleController.text,
+                  double.parse(amountController.text),
+                );
               },
-              style:
-              TextButton.styleFrom(primary: NordColors.aurora.purple),
-
+              style: TextButton.styleFrom(primary: NordColors.aurora.purple),
             )
           ],
         ),

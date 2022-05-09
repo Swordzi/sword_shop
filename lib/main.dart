@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Expenses',
       home: MyHomePage(),
     );
@@ -24,10 +24,9 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   //late String purchaseInput;
   //late String amountInput;
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
 
-  MyHomePage({Key? key}) : super(key: key);
+
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,21 +36,22 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: NordColors.$10,
         title: const Text('Expenses'),
     ),
-      // TODO: Fix bottom overflowing
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const <Widget>[
-          SizedBox(
-            width: double.infinity,
-            child: Card(
-              color: NordColors.$10,
-              child: Text('Chart'),
-              elevation: 5,
-            ),
+      body: SingleChildScrollView(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: const <Widget>[
+              SizedBox(
+                width: double.infinity,
+                child: Card(
+                  color: NordColors.$10,
+                  child: Text('Chart'),
+                  elevation: 5,
+                ),
+              ),
+              UserTransaction(),
+            ],
           ),
-          UserTransaction(),
-        ],
       ),
-    );
+      );
   }
 }
