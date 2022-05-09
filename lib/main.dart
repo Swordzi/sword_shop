@@ -1,10 +1,9 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
-import 'widgets/transaction_list.dart';
-import 'widgets/new_transaction.dart';
+import 'package:sword_shop/widgets/user_transactions.dart';
 
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
@@ -37,12 +36,12 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: NordColors.$10,
         title: const Text('Expenses'),
-      ),
+    ),
       // TODO: Fix bottom overflowing
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          const SizedBox(
+        children: const <Widget>[
+          SizedBox(
             width: double.infinity,
             child: Card(
               color: NordColors.$10,
@@ -50,8 +49,7 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          NewTransaction(),
-          const TransactionList(),
+          UserTransaction(),
         ],
       ),
     );

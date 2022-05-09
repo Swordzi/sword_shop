@@ -13,44 +13,40 @@ class NewTransaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: 
-      Card(
-        color: NordColors.snowStorm.lightest,
-        elevation: 5,
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Column(
-            children: <Widget>[
-              TextField(
-                decoration: const InputDecoration(labelText: 'Purchase'),
-                controller: nameController,
-                //onChanged: (val) => purchaseInput = val,
-              ),
-              TextField(
-                decoration: const InputDecoration(labelText: 'Price'),
-                controller: priceController,
-                //onChanged: (val) => amountInput = val,
-              ),
-              TextButton(
-                child: const Text('Add transaction'),
-                onPressed: () {
-                  if (kDebugMode) {
-                    print(nameController.text);
-                  }
-                  if (kDebugMode) {
-                    print(priceController.text);
-                  }
-                },
-                style:
-                TextButton.styleFrom(primary: NordColors.aurora.purple),
+    return Card(
+      color: NordColors.snowStorm.lightest,
+      elevation: 5,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        child: Column(
+          children: <Widget>[
+            TextField(
+              decoration: const InputDecoration(labelText: 'Purchase'),
+              controller: nameController,
+              //onChanged: (val) => purchaseInput = val,
+            ),
+            TextField(
+              decoration: const InputDecoration(labelText: 'Price'),
+              controller: priceController,
+              //onChanged: (val) => amountInput = val,
+            ),
+            TextButton(
+              child: const Text('Add transaction'),
+              onPressed: () {
+                if (kDebugMode) {
+                  print(nameController.text);
+                }
+                if (kDebugMode) {
+                  print(priceController.text);
+                }
+              },
+              style:
+              TextButton.styleFrom(primary: NordColors.aurora.purple),
 
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
-      
     );
   }
 }

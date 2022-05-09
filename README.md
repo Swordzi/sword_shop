@@ -1,16 +1,24 @@
-# sword_shop
+Badges here
 
-Sword shop and expenses calculator app.
 
-## Getting Started
+# Sword.Shop
+A shopping / expense calculator app built with flutter
 
-This project is a starting point for a Flutter application.
+This is a project for me to learn more flutter and also to do some backend stuff later
 
-A few resources to get you started if this is your first Flutter project:
+## Using the project
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+INSTRUCTIONS TO HOW TO USE THE PROJECT
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributors
+
+<a href="https://github.com/swordzi/sword.today/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=YOURNAME/REPOSITORY" />
+</a>
+
+EXTRA NOTICES SUCH AS HOW TO CONTRIBUTE
+
+## Licenses
+
+This project is licensed under INSERT LICENSE HERE.
+Projects used in this project include LICENSES TO MENTION HERE
