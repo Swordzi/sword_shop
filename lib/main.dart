@@ -3,7 +3,6 @@ Copyright (c) 2022 Iiro Polso */
 
 import 'package:sword_shop/widgets/user_transactions.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
@@ -25,7 +24,6 @@ class MyHomePage extends StatelessWidget {
   //late String purchaseInput;
   //late String amountInput;
 
-
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
@@ -35,23 +33,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: NordColors.$10,
         title: const Text('Expenses'),
-    ),
+      ),
       body: SingleChildScrollView(
         child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const <Widget>[
-              SizedBox(
-                width: double.infinity,
-                child: Card(
-                  color: NordColors.$10,
-                  child: Text('Chart'),
-                  elevation: 5,
-                ),
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: const <Widget>[
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                color: NordColors.$10,
+                child: Text('Chart'),
+                elevation: 5,
               ),
-              UserTransaction(),
-            ],
-          ),
+            ),
+            UserTransaction(),
+          ],
+        ),
       ),
-      );
+    );
   }
 }

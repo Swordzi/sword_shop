@@ -3,7 +3,6 @@ Copyright (c) 2022 Iiro Polso */
 
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
-import 'package:flutter/foundation.dart';
 
 class NewTransaction extends StatelessWidget {
   final Function addTx;
@@ -11,7 +10,6 @@ class NewTransaction extends StatelessWidget {
   final amountController = TextEditingController();
 
   NewTransaction(this.addTx, {Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
