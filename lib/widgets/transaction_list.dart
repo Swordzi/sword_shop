@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
                         width: 3,
                       )),
                   child: Text(
-                    '${transactions[index].amount}€',
+                    '${transactions[index].amount.toStringAsPrecision(3)}€',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
