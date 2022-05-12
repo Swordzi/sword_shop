@@ -1,7 +1,9 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
-import 'package:sword_shop/widgets/user_transactions.dart';
+import 'package:sword_shop/widgets/transaction_list.dart';
+import 'models/transaction.dart';
+import 'widgets/new_transaction.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
@@ -15,16 +17,61 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Expenses',
-      home: MyHomePage(),
+      home: _MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class _MyHomePage extends StatefulWidget {
   //late String purchaseInput;
   //late String amountInput;
 
-  const MyHomePage({Key? key}) : super(key: key);
+  const _MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  State<_MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<_MyHomePage> {
+  final List<Transaction> _uTransactions = [
+    Transaction(
+      id: 't1',
+      title: 'New IDE',
+      amount: 5.99,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'Weekly snack',
+      amount: 2.30,
+      date: DateTime.now(),
+    )
+  ];
+
+  void _addTransaction(String txTitle, double txAmount) {
+    final newTx = Transaction(
+      title: txTitle,
+      amount: txAmount,
+      id: DateTime.now().toString(),
+      date: DateTime.now(),
+    );
+    setState(() {
+      _uTransactions.add(newTx);
+    });
+  }
+
+  void _startAddNewTransaction(BuildContext ctx) {
+    showModalBottomSheet(
+      context: ctx,
+      builder: (_) {
+        return GestureDetector(
+          onTap: () {},
+          child: NewTransaction(_addTransaction),
+          behavior: HitTestBehavior.opaque,
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,21 +84,23 @@ class MyHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const <Widget>[
-            SizedBox(
+          children: <Widget>[
+            const SizedBox(
               width: double.infinity,
               child: Card(
                 color: NordColors.$10,
                 child: Text('Chart'),
+
                 elevation: 5,
               ),
             ),
-            UserTransaction(),
+            TransactionList(_uTransactions)
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),
-        onPressed: () {},
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () => _startAddNewTransaction(context),
       ),
     );
   }
