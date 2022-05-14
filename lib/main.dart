@@ -90,7 +90,6 @@ class _MyHomePageState extends State<_MyHomePage> {
               child: Card(
                 color: NordColors.$10,
                 child: Text('Chart'),
-
                 elevation: 5,
               ),
             ),

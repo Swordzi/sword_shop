@@ -24,14 +24,14 @@ class TransactionList extends StatelessWidget {
               children: [
                 Container(
                   padding:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   decoration: BoxDecoration(
                       border: Border.all(
-                        color: NordColors.$4,
-                        width: 3,
-                      )),
+                    color: NordColors.$4,
+                    width: 3,
+                  )),
                   child: Text(
                     '${transactions[index].amount.toStringAsPrecision(3)}€',
                     style: const TextStyle(
@@ -48,10 +48,14 @@ class TransactionList extends StatelessWidget {
                       Text(
                         transactions[index].title,
                         style: const TextStyle(
-                            fontSize: 16.5, fontWeight: FontWeight.bold),
+                          color: NordColors.$15,
+                          fontSize: 16.5,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                       Text(
-                        DateFormat('EEEE d. MMMM y').format(transactions[index].date),
+                        DateFormat('EEEE d. MMMM y')
+                            .format(transactions[index].date),
                         style: TextStyle(color: NordColors.polarNight.darker),
                       )
                     ])

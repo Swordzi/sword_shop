@@ -39,7 +39,8 @@ class _NewTransactionState extends State<NewTransaction> {
       elevation: 5,
       child: Container(
         height: 300,
-       decoration: BoxDecoration(border: Border.all(color: NordColors.$2, width: 1)),
+        decoration:
+            BoxDecoration(border: Border.all(color: NordColors.$2, width: 1)),
         padding: const EdgeInsets.all(5),
         child: Column(
           children: <Widget>[
