@@ -1,6 +1,7 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
@@ -25,11 +26,12 @@ class _NewTransactionState extends State<NewTransaction> {
     if (enteredTitle.isEmpty || enteredAmount <= 0) {
       return;
     }
-
     widget.addTx(
       enteredTitle,
       enteredAmount,
     );
+    // TODO: Implement checking if closeMenu is true then enable this.
+    // Navigator.of(context).pop();
   }
 
   @override
