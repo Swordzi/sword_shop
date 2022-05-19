@@ -42,7 +42,9 @@ class MyHomePage extends StatelessWidget {
               width: double.infinity,
               child: Card(
                 color: NordColors.$10,
-                child: Text('Chart'),
+                child: Text(
+                  'Chart',
+                ),
                 elevation: 5,
               ),
             ),
