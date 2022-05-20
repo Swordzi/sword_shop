@@ -4,7 +4,6 @@ Copyright (c) 2022 Iiro Polso */
 import '../models/transaction.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
@@ -19,7 +18,7 @@ class TransactionList extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: (bctx, index) {
           return Card(
-            color: NordColors.$10,
+            color: const Color(0xFF5e81ac),
             child: Row(
               children: [
                 Container(
@@ -29,7 +28,7 @@ class TransactionList extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   decoration: BoxDecoration(
                       border: Border.all(
-                    color: NordColors.$4,
+                    color: const Color(0xFFd8dee9),
                     width: 3,
                   )),
                   child: Text(
@@ -38,7 +37,7 @@ class TransactionList extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                       fontSize: 15,
-                      color: NordColors.$3,
+                      color: Color(0xFFd8dee9),
                     ),
                   ),
                 ),
@@ -48,7 +47,7 @@ class TransactionList extends StatelessWidget {
                       Text(
                         transactions[index].title,
                         style: const TextStyle(
-                          color: NordColors.$15,
+                          color: Color(0xFFd8dee9),
                           fontSize: 16.5,
                           fontWeight: FontWeight.bold,
                         ),
@@ -56,7 +55,7 @@ class TransactionList extends StatelessWidget {
                       Text(
                         DateFormat('EEEE d. MMMM y')
                             .format(transactions[index].date),
-                        style: TextStyle(color: NordColors.polarNight.darker),
+                        style: const TextStyle(color:Color(0xFF4c566a)),
                       )
                     ])
               ],
