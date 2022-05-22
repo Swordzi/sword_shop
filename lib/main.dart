@@ -7,7 +7,6 @@ import 'widgets/new_transaction.dart';
 
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -76,9 +75,9 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2e3440),
+      backgroundColor: const Color(0xFF2e3440),
       appBar: AppBar(
-        backgroundColor: Color(0xFF5e81ac),
+        backgroundColor: const Color(0xFF5e81ac),
         title: const Text('Expenses'),
       ),
       body: SingleChildScrollView(
@@ -95,7 +94,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 elevation: 5,
               ),
             ),
-            TransactionList(_uTransactions)
+            TransactionList(_uTransactions),
           ],
         ),
       ),

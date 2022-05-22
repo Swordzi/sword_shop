@@ -37,12 +37,12 @@ class _NewTransactionState extends State<NewTransaction> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFFd8dee9),
+      color: const Color(0xFFd8dee9),
       elevation: 5,
       child: Container(
         height: 300,
         decoration:
-            BoxDecoration(border: Border.all(color: Color(0xFF434c5e), width: 1)),
+            BoxDecoration(border: Border.all(color: const Color(0xFF434c5e), width: 1)),
         padding: const EdgeInsets.all(5),
         child: Column(
           children: <Widget>[
@@ -62,7 +62,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextButton(
               child: const Text('Add transaction'),
               onPressed: () => submitTx(),
-              style: TextButton.styleFrom(primary: Color(0xFFbf616a)),
+              style: TextButton.styleFrom(primary: const Color(0xFFbf616a)),
             )
           ],
         ),
