@@ -2,7 +2,7 @@
 Copyright (c) 2022 Iiro Polso */
 
 class Preferences {
-  final bool closeMenu;
+  bool closeMenu = true;
   final int theme;
 
   Preferences({
