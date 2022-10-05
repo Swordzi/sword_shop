@@ -8,7 +8,6 @@ import 'models/transaction.dart';
 import 'widgets/new_transaction.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -87,9 +86,9 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: NordColors.$0,
+      backgroundColor: const Color(0xFF2e3440),
       appBar: AppBar(
-        backgroundColor: NordColors.$10,
+        backgroundColor: const Color(0xFF5e81ac),
         title: const Text('Expenses'),
       ),
       body: SingleChildScrollView(
@@ -99,14 +98,14 @@ class _MyHomePageState extends State<_MyHomePage> {
             const SizedBox(
               width: double.infinity,
               child: Card(
-                color: NordColors.$10,
+                color: Color(0xFF5e81ac),
                 child: Text(
                   'Chart',
                 ),
                 elevation: 5,
               ),
             ),
-            TransactionList(_uTransactions)
+            TransactionList(_uTransactions),
           ],
         ),
       ),

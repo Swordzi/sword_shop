@@ -2,7 +2,6 @@
 Copyright (c) 2022 Iiro Polso */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
 class NewTransaction extends StatefulWidget {
   final Function addTx;
@@ -15,8 +14,8 @@ class NewTransaction extends StatefulWidget {
 
 class _NewTransactionState extends State<NewTransaction> {
   final titleController = TextEditingController();
-
   final amountController = TextEditingController();
+  bool closeMenu = false;
 
   void submitTx() {
     final enteredTitle = titleController.text;
@@ -29,19 +28,20 @@ class _NewTransactionState extends State<NewTransaction> {
       enteredTitle,
       enteredAmount,
     );
-    // TODO: Implement checking if closeMenu is true then enable this.
-    // Navigator.of(context).pop();
+    if (true) {
+      Navigator.of(context).pop();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: NordColors.snowStorm.lightest,
+      color: const Color(0xFFd8dee9),
       elevation: 5,
       child: Container(
         height: 300,
-        decoration:
-            BoxDecoration(border: Border.all(color: NordColors.$2, width: 1)),
+        decoration: BoxDecoration(
+            border: Border.all(color: const Color(0xFF434c5e), width: 1)),
         padding: const EdgeInsets.all(5),
         child: Column(
           children: <Widget>[
@@ -61,8 +61,9 @@ class _NewTransactionState extends State<NewTransaction> {
             TextButton(
               child: const Text('Add transaction'),
               onPressed: () => submitTx(),
-              style: TextButton.styleFrom(primary: NordColors.aurora.purple),
-            )
+              style: TextButton.styleFrom(primary: const Color(0xFFbf616a)),
+            ),
+            Switch(value: closeMenu, onChanged: (_) => setState(() {})),
           ],
         ),
       ),
