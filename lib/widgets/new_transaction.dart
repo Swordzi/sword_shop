@@ -1,7 +1,6 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 

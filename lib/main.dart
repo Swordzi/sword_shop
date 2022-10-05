@@ -1,6 +1,8 @@
 /* MIT License
 Copyright (c) 2022 Iiro Polso */
 
+import 'package:flutter/foundation.dart';
+import 'package:sword_shop/models/preferences.dart';
 import 'package:sword_shop/widgets/transaction_list.dart';
 import 'models/transaction.dart';
 import 'widgets/new_transaction.dart';
@@ -8,13 +10,23 @@ import 'widgets/new_transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_nord_theme/flutter_nord_theme.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+
+  final List<Preferences> _uPreferences = [
+    Preferences(
+      closeMenu: true,
+      theme: 1,
+    )
+  ];
 
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print("Test");
+    }
     return const MaterialApp(
       title: 'Expenses',
       home: _MyHomePage(),
@@ -47,7 +59,6 @@ class _MyHomePageState extends State<_MyHomePage> {
       date: DateTime.now(),
     )
   ];
-
   void _addTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
       title: txTitle,
