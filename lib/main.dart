@@ -6,6 +6,9 @@ import 'package:sword_shop/models/preferences.dart';
 import 'package:sword_shop/widgets/transaction_list.dart';
 import 'models/transaction.dart';
 import 'widgets/new_transaction.dart';
+import 'containers/chart_container.dart';
+import 'widgets/pie_chart.dart';
+
 
 import 'package:flutter/material.dart';
 
@@ -99,8 +102,9 @@ class _MyHomePageState extends State<_MyHomePage> {
               width: double.infinity,
               child: Card(
                 color: Color(0xFF5e81ac),
-                child: Text(
-                  'Chart',
+                child: ChartContainer( title: 'Pie Chart',
+                  color: Color(0xff24b273),
+                  chart: PieChartContent()
                 ),
                 elevation: 5,
               ),
